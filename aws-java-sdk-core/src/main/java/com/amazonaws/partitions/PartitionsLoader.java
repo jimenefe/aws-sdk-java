@@ -49,9 +49,9 @@ public class PartitionsLoader {
      * Jackson object mapper that is used for parsing the partition files.
      */
     private static final ObjectMapper mapper = new ObjectMapper()
+            .configure(JsonParser.Feature.ALLOW_COMMENTS, true)
             .disable(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS)
             .disable(MapperFeature.ALLOW_FINAL_FIELDS_AS_MUTATORS)
-            .enable(JsonParser.Feature.ALLOW_COMMENTS)
             .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
     /**
